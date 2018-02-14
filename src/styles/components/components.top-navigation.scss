@@ -1,0 +1,17 @@
+
+// TOP NAVIGATION AND PROFILE LINKS, ONLY VISIBLE WHEN LOGGED IN
+
+.c-top-navigation{
+  margin: 0;
+  padding: $inuit-global-spacing-unit;
+  background: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0px 7px 14px -5px rgba(0,0,0,0.75);
+
+  &__image{
+    width: $inuit-global-spacing-unit-large;
+    border-radius: $inuit-global-spacing-unit-large;
+  }
+}

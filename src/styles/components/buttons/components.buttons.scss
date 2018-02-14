@@ -1,0 +1,12 @@
+.c-btn{
+
+  &--add{
+    background-color: $brand-color;
+    position: fixed;
+    right: $spacing-unit;
+    bottom: $spacing-unit;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+  }
+}

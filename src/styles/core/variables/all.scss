@@ -1,0 +1,29 @@
+/*
+* [1] COLORS
+*/
+
+
+// [1] COLORS
+
+$app-base-color: #DB60B2;
+
+$background__dark: rgb(23, 30, 37);
+$background__dark__transparent: rgba(23, 30, 37, 0);
+
+$base-ease-out: cubic-bezier(.25,.73,.52,.94);
+$base-ease-in-out: cubic-bezier(.24,.03,.16,.8);
+
+$default-padding: 20px;
+
+// []
+
+$font-sans: 'Lato', sans-serif;
+$font-serif: 'Merriweather', serif;
+
+
+.background-image__cover{
+    background-size: cover;
+    background-position: center;
+}
+
+

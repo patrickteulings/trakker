@@ -1,0 +1,108 @@
+
+/*
+*   [1] Transitions, Transforms
+*   [2] BreakPoints
+*   [3] Flex display
+*   [4] LAYOUT MIXINS
+*   [5] TYPOGRAPHY MIXINS
+*/
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+  }
+  
+  @mixin transformOrigin($valueX, $valueY){
+    -webkit-transform-origin: $valueX $valueY;
+    transform-origin: $valueX $valueY;  
+  }
+  
+  @mixin scale($valueWidth, $valueHeight){
+    -webkit-transform: scale($valueWidth, $valueHeight);
+    transform: scale($valueWidth, $valueHeight);
+  }
+  
+  @mixin translateY($value){
+    -webkit-transform: translateY($value);
+    transform: translateY($value);
+  }
+  
+  @mixin translateZ($value){
+    -webkit-transform: translateY($value);
+    transform: translateY($value);
+  }
+  
+  @mixin translateZ($value){
+    -webkit-transform: translateY($value);
+    transform: translateY($value);
+  }
+  
+  @mixin translate3d($valueX, $valueY, $valueZ){
+    -webkit-transform: translate3d($valueX, $valueY, $valueZ);
+    transform: translate3d($valueX, $valueY, $valueZ);
+  }
+  
+  @mixin rotate($value){
+    -webkit-transform: rotate($value);
+    transform: rotate($value);
+  }
+  
+  @import 'breakpoints';
+
+    // [1] FONT SIZE MIXIN WITH FALLBACK
+  
+    @mixin font-size($sizeValue: 1.6) {
+      font-size: ($sizeValue * 10) + px;
+      font-size: $sizeValue + rem;
+    }
+  
+  
+
+  
+    @mixin calc($property, $expression) { 
+      #{$property}: -webkit-calc(#{$expression}); 
+      #{$property}: -moz-calc(#{$expression});
+      #{$property}: calc(#{$expression}); 
+    } 
+  
+    @mixin linearGradient($top, $bottom){
+      background: $top; /* Old browsers */
+      background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+      background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+  }
+  
+  // [4] LAYOUT MIXINS
+  
+  @mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+    background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+  }
+  
+  @mixin text-columns($columns, $gutter){
+      -webkit-column-count: $columns;    
+      column-count: $columns;
+      -webkit-column-gap: $gutter;    
+      column-gap: $gutter;   
+  }
+  
+  .twoColText, .twoColText>p{
+    @include min-desktop{
+      @include text-columns(2, $default-padding);
+    }
+  }
+  
+  // [5] TYPOGRAPHY MIXINS
+  
+  @mixin font-smoothing(){
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
